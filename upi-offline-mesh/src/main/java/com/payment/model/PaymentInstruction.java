@@ -1,7 +1,14 @@
 package com.payment.model;
 
+import lombok.*;
+
 import java.math.BigDecimal;
 
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class PaymentInstruction {
 
     private String senderVpa;

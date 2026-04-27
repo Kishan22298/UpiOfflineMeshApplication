@@ -1,13 +1,17 @@
 package com.payment.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "accounts")
-@Data
+@Setter
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Account {
     @Id
     private String vpa; // Virtual Payment Address (VPA) as primary key
@@ -21,4 +25,9 @@ public class Account {
     @Version  // Optimistic locking — prevents lost updates on concurrent transfers
     private Long version;
 
+    public Account(String vpa, String holderName, BigDecimal balance) {
+        this.vpa = vpa;
+        this.holderName = holderName;
+        this.balance = balance;
+    }
 }
