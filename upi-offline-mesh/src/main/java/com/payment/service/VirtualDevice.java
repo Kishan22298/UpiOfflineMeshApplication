@@ -7,7 +7,6 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-@Service
 public class VirtualDevice {
 
     private final String deviceId;
